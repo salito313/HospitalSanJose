@@ -52,5 +52,13 @@ public abstract class Medicamento {
     public void setPrecioVenta(double precioVenta) {
         this.precioVenta = precioVenta;
     }
+
+    public Medicamento(String nombre, String descripcion, double costo) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.costo = costo;
+    }
     
+    
+    public abstract void calcularPrecio();
 }

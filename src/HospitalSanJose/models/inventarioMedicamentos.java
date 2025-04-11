@@ -4,23 +4,30 @@
  */
 package HospitalSanJose.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author salom
  */
-class inventarioMedicamentos {
-    public String inventarioMedicamentos;
+    public class InventarioMedicamentos {
+    private List<Medicamento> medicamentos = new ArrayList<>();
 
-    public inventarioMedicamentos(String inventarioMedicamentos) {
-        this.inventarioMedicamentos = inventarioMedicamentos;
+    public void agregarMedicamento(Medicamento medicamento, Hospital hospital) {
+        if (hospital.getPresupuesto() < medicamento.getCosto()) {
+            throw new PresupuestoInsuficienteException("Presupuesto insuficiente");
+        }
+        medicamentos.add(medicamento);
+        hospital.setPresupuesto(hospital.getPresupuesto() - medicamento.getCosto());
     }
 
-    public String getInventarioMedicamentos() {
-        return inventarioMedicamentos;
+    public List<Medicamento> getMedicamentos() {
+        return medicamentos;
     }
 
-    public void setInventarioMedicamentos(String inventarioMedicamentos) {
-        this.inventarioMedicamentos = inventarioMedicamentos;
+    public void setMedicamentos(List<Medicamento> medicamentos) {
+        this.medicamentos = medicamentos;
     }
     
-}
+    }

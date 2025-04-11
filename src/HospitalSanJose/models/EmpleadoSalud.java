@@ -8,13 +8,23 @@ package HospitalSanJose.models;
  *
  * @author salom
  */
-public class EmpleadoSalud {
-    public String especialidad;
-    public int horasTrabajadas;
+    public class EmpleadoSalud extends Empleado {
+    private String especialidad;
+    private int horasTrabajadas;
 
-    public EmpleadoSalud(String especialidad, int horasTrabajadas) {
+    public EmpleadoSalud(String nombre, String documento, int edad, 
+                        double salarioBase, String especialidad) {
+        super(nombre, documento, edad, salarioBase);
         this.especialidad = especialidad;
-        this.horasTrabajadas = horasTrabajadas;
+    }
+
+    @Override
+    public double calcularSalario() {
+        return salarioBase + (salarioBase * 0.012 * horasTrabajadas);
+    }
+
+    public void setHorasTrabajadas(int horas) { 
+        this.horasTrabajadas = horas; 
     }
 
     public String getEspecialidad() {
@@ -25,12 +35,18 @@ public class EmpleadoSalud {
         this.especialidad = especialidad;
     }
 
-    public int getHorasTrabajadas() {
-        return horasTrabajadas;
+    @Override
+    public double getSalarioBase() {
+        return salarioBase;
     }
 
-    public void setHorasTrabajadas(int horasTrabajadas) {
-        this.horasTrabajadas = horasTrabajadas;
+    /**
+     *
+     * @param salarioBase
+     */
+    @Override
+    public void setSalarioBase(double salarioBase) {
+        this.salarioBase = salarioBase;
     }
-    
-}
+    }
+

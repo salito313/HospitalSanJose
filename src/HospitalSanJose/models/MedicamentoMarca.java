@@ -8,10 +8,25 @@ package HospitalSanJose.models;
  *
  * @author salom
  */
-public class MedicamentoMarca extends Medicamento{
-    
-    public MedicamentoMarca(String nombre, String descripcion, double costo, double precioVenta) {
-        super(nombre, descripcion, costo, precioVenta);
+public class MedicamentoMarca extends Medicamento {
+    private String fabricante;
+
+    public MedicamentoMarca(String nombre, String descripcion, double costo, String fabricante) {
+        super(nombre, descripcion, costo);
+        this.fabricante = fabricante;
+    }
+
+    @Override
+    public void calcularPrecio() {
+        setPrecioVenta(getCosto() * 1.25);
+    }
+
+    public String getFabricante() {
+        return fabricante;
+    }
+
+    public void setFabricante(String fabricante) {
+        this.fabricante = fabricante;
     }
 
     @Override
@@ -34,19 +49,11 @@ public class MedicamentoMarca extends Medicamento{
         this.descripcion = descripcion;
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public double getCosto() {
         return costo;
     }
 
-    /**
-     *
-     * @param costo
-     */
     @Override
     public void setCosto(double costo) {
         this.costo = costo;
@@ -61,5 +68,7 @@ public class MedicamentoMarca extends Medicamento{
     public void setPrecioVenta(double precioVenta) {
         this.precioVenta = precioVenta;
     }
+    
+    
     
 }

@@ -8,19 +8,51 @@ package HospitalSanJose.models;
  *
  * @author salom
  */
-class Empleado {
-    public String Empleado;
+   public abstract class Empleado {
+    private String nombre;
+    private String documento;
+    private int edad;
+    protected double salarioBase;
 
-    public Empleado(String Empleado) {
-        this.Empleado = Empleado;
+    public Empleado(String nombre, String documento, int edad, double salarioBase) {
+        this.nombre = nombre;
+        this.documento = documento;
+        this.edad = edad;
+        this.salarioBase = salarioBase;
     }
 
-    public String getEmpleado() {
-        return Empleado;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setEmpleado(String Empleado) {
-        this.Empleado = Empleado;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
+
+    public String getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(String documento) {
+        this.documento = documento;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public double getSalarioBase() {
+        return salarioBase;
+    }
+
+    public void setSalarioBase(double salarioBase) {
+        this.salarioBase = salarioBase;
+    }
+    
+    public abstract double calcularSalario();
     
 }
