@@ -8,20 +8,51 @@ package HospitalSanJose.models;
  *
  * @author salom
  */
-class Gerente {
+public class Gerente {
+    private String nombre;
+    private String documento;
+    private int edad;
+    private String carrera;
 
-        private String gerente;
-
-    public Gerente(String gerente) {
-        this.gerente = gerente;
+    public Gerente(String nombre, String documento, int edad, String carrera) {
+        this.nombre = nombre;
+        this.documento = documento;
+        this.edad = edad;
+        this.carrera = carrera;
     }
 
-    public String getGerente() {
-        return gerente;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setGerente(String gerente) {
-        this.gerente = gerente;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
-        
+
+    public String getDocumento() {
+        return documento;
     }
+
+    public void setDocumento(String documento) {
+        this.documento = documento;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
+    }
+    
+    
+}
+

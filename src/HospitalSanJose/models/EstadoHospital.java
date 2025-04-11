@@ -4,24 +4,13 @@
  */
 package HospitalSanJose.models;
 
+public enum  EstadoHospital {
+    ACTIVO, QUIEBRA
+    
+    
+    
+}
 /**
  *
  * @author salom
  */
-class  EstadoHospital {
-    
-    private String nombre;
-    public EstadoHospital(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    
-    
-}
